@@ -48,6 +48,34 @@
                     }
                 </script>
 	
+
+	<script>
+		(function enableFlipbookMobileControls() {
+			function dispatch(direction, attempt) {
+				if (attempt > 10) {
+					return;
+				}
+				if (direction === 'next' && typeof window.nextPageFun === 'function') {
+					window.nextPageFun('mobile controls');
+					return;
+				}
+				if (direction === 'prev' && typeof window.previousPageFun === 'function') {
+					window.previousPageFun('mobile controls');
+					return;
+				}
+				setTimeout(function () {
+					dispatch(direction, attempt + 1);
+				}, 150);
+			}
+			function handleFlipbookNav(event) {
+				if (!event || !event.data || event.data.type !== 'flipbook-nav') {
+					return;
+				}
+				dispatch(event.data.dir, 0);
+			}
+			window.addEventListener('message', handleFlipbookNav, false);
+		})();
+	</script>
 </body>
 
 </html>

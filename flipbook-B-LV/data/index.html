@@ -26,9 +26,66 @@
 <body>
   <script type="text/javascript">%userDefineScript%</script>
 <!--you can copy the below code to your htm page-----------------------------begin--->
-<!--change the width and height value as you want.--> 
+<!--change the width and height value as you want.-->
 <!-- Do change "index.htm" to your real html name of the flippingbook--> 
-<iframe  style="width:100%;height:450px"  src="%DESTURL%flipBook.html"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen mozallowfullscreen  webkitallowfullscreen ></iframe>
+<div data-same-height-display-contents="" style="--jc:start" class="gCkuAxa8Cp gp-relative gp-flex gp-flex-col">
+      
+    
+    <div data-id="gXMyMno1Zk" class="gXMyMno1Zk" style="--ta:center;--pageType:GP_PRODUCT;--mt:0px;--ml:0px;--mb:24px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mt-tablet:0px;--ml-tablet:0px;--mb-tablet:24px;--mr-tablet:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--mt-mobile:0px;--ml-mobile:0px;--mb-mobile:24px;--mr-mobile:0px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--dynamic-source-color:#F4F4F4">
+      <div class="gp-flex" style="--jc:center">
+        <h2 data-gp-text="" class="gp-g-heading-2  gp-text-instant gp-text" style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--ta:center;--ta-mobile:center;--size:41px;--size-tablet:26px;--size-mobile:36px;--c:#FFFFFF;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:">
+          <strong>Pavartykime žurnalą</strong>
+        </h2>
+      </div>
+    </div>
+    
+  
+    <div style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pageType:GP_PRODUCT;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--ta:left;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll" data-keep-class="true" class="gCeIp8w8Vv gp-custom-code">
+      <div>
+    <style>
+  /* Show the custom controls on mobile/touch; keep hidden otherwise */
+  @media (hover: none) and (pointer: coarse), (max-width: 900px) {
+    .flipbook-controls { display: flex !important; }
+  }
+  </style>
+  <div class="flipbook-embed" style="max-width:900px;margin:0 auto">
+     <iframe id="flipbook%SLIDERID%" src="%DESTURL%flipBook.html" style="width:100%;height:450px;border:0" scrolling="no" allowtransparency="true" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen=""></iframe>
+    <div class="flipbook-controls" style="display:none;gap:24px;justify-content:center;align-items:center;margin-top:16px">
+      <button id="flipPrev%SLIDERID%" type="button" aria-label="Previous page" style="
+        width:60px;height:60px;border-radius:9999px;border:2px solid #C4EEFF;background:transparent;
+        cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:0;">
+        <svg viewBox="0 0 24 24" style="height:50%;" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <button id="flipNext%SLIDERID%" type="button" aria-label="Next page" style="
+        width:60px;height:60px;border-radius:9999px;border:2px solid #C4EEFF;background:transparent;
+        cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:0;">
+        <svg viewBox="0 0 24 24" style="height:50%;" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 6L15 12L9 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+    <script>
+      (function setupFlipbook%SLIDERID%() {
+        var frame = document.getElementById('flipbook%SLIDERID%');
+        var prev = document.getElementById('flipPrev%SLIDERID%');
+        var next = document.getElementById('flipNext%SLIDERID%');
+        if (!frame || !prev || !next) { return; }
+        function send(dir) {
+          try {
+            frame.contentWindow.postMessage({ type: 'flipbook-nav', dir: dir }, '*');
+          } catch (e) {}
+        }
+        prev.addEventListener('click', function(){ send('prev'); });
+        next.addEventListener('click', function(){ send('next'); });
+      })();
+    </script>
+  </div>
+    </div>
+    </div>
+  
+    </div>
 <!--you can copy the above code to your htm page-----------------------------end---> 
 </body>
 </html>
